@@ -1,7 +1,6 @@
 import Router from "vue-router";
 import Vue from "vue";
-import Todolist from "@/components/todolist.vue";
-import Todopage from "@/components/todopage.vue";
+import Userdata from "@/components/userdata.vue";
 
 Vue.use(Router);
 
@@ -9,14 +8,10 @@ export default new Router({
     routes: [
         {
             path: "/",
-            name: "Todolist",
-            component: Todolist,
+            name: "Userdata",
+            component: Userdata,
         },
-        {
-            path: "/todopage",
-            name: "todopage",
-            component: Todopage,
-        },
+
 
     ],
 
