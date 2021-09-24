@@ -10,6 +10,7 @@
             outlined
             maxlength="1"
             @keypress="isNumber(event)"
+            @keydown.enter="createhours_forweek"
             dense
             required
           >
@@ -22,6 +23,7 @@
             v-model="newTask1"
             @keypress="isNumber2(event)"
             maxlength="1"
+            @keydown.enter="createhours_forweek"
             placeholder="Enter no of subjects per day"
             outlined
             dense
@@ -49,7 +51,7 @@
         </div>
         <div v-if="equation != ''" class="ml-2">
           "Please enter {{ this.newTask2 }} subjects name and total working
-          hours for week respectively.""
+          hours for week respectively."
         </div>
       </v-row>
       <v-row class="mt-6">
@@ -101,7 +103,12 @@
         </v-card>
       </v-dialog>
     </div>
-    <Timetable v-if="step == 2" :user="this.subjectlist" />
+    <Timetable
+      v-if="step == 2"
+      :user="this.subjectlist"
+      :count="this.newTask"
+      :count1="this.newTask1"
+    />
   </v-container>
 </template>
 <script>
