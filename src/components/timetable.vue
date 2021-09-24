@@ -38,8 +38,8 @@ export default {
   }),
 
   mounted() {
-    console.log("tabledata1", this.user);
-    console.log("count", this.count);
+    // console.log("tabledata1", this.user);
+    // console.log("count", this.count);
     this.generatetable_header(this.count);
     // this.generatetable_object();
     this.generatetable_data(this.user);
@@ -55,8 +55,8 @@ export default {
     },
 
     generatetable_data(data) {
-      console.log(data);
-      console.log("generatetable_datathis.objectdata", this.objectdata);
+      //   console.log(data);
+      //   console.log("generatetable_datathis.objectdata", this.objectdata);
       //   console.log(this.objectdata.data);
       var datarray = [];
       //   var self = this;
@@ -65,7 +65,7 @@ export default {
           datarray.push(ele.subject_name);
         }
       });
-      console.log("afterloop", datarray);
+      //   console.log("afterloop", datarray);
       this.generatetable_object(datarray);
     },
     generatetable_object(datarray) {
@@ -157,7 +157,7 @@ export default {
           this.globalcount = this.globalcount + 7;
         }
       }
-      console.log("this.objectdata", this.objectdata);
+      //   console.log("this.objectdata", this.objectdata);
     },
   },
 };

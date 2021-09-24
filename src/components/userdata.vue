@@ -79,7 +79,7 @@
           </v-row>
         </div>
         <div v-if="equation != ''">
-          <v-btn outlined dense color="green" @click="generatetable(item)"
+          <v-btn outlined dense color="green" @click="generatetable"
             >GENERATE
           </v-btn>
         </div>
@@ -132,7 +132,7 @@ export default {
   methods: {
     createhours_forweek() {
       this.equation = this.newTask * this.newTask1;
-      console.log(this.equation);
+      // console.log(this.equation);
       if (
         this.newTask == null ||
         this.newTask1 == null ||
@@ -156,7 +156,7 @@ export default {
             subject_hours: "",
           });
         }
-        console.log(this.subjectlist);
+        // console.log(this.subjectlist);
       }
     },
     isNumber(evt) {
@@ -186,16 +186,16 @@ export default {
         return true;
       }
     },
-    generatetable(item) {
-      console.log(item);
-      console.log("this.subjectlist", this.subjectlist);
+    generatetable() {
+      // console.log(item);
+      // console.log("this.subjectlist", this.subjectlist);
       var totalhours = 0;
       var self = this;
       self.subjectlist.forEach(function (ele) {
         totalhours = parseInt(totalhours) + parseInt(ele.subject_hours);
       });
-      console.log("totalhours", totalhours);
-      console.log("dialogtext", this.equation);
+      // console.log("totalhours", totalhours);
+      // console.log("dialogtext", this.equation);
       if (totalhours == this.equation) {
         this.step = 2;
       } else {
